@@ -2,13 +2,13 @@ import { useRef, useEffect } from 'react'
 import { ArrowRight, Instagram, Twitter, Globe, Sparkles } from 'lucide-react'
 
 interface Props {
-  readingUrl: string
+  stripeUrl: string
 }
 
 const HERO_VIDEO =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4'
 
-export default function HeroSection({ readingUrl }: Props) {
+export default function HeroSection({ stripeUrl }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const fadeAnimRef = useRef<number | null>(null)
 
@@ -72,7 +72,7 @@ export default function HeroSection({ readingUrl }: Props) {
   }, [])
 
   return (
-    <section className="min-h-screen overflow-hidden relative flex flex-col bg-black">
+    <section className="min-h-screen overflow-hidden relative flex flex-col">
       {/* Background video */}
       <video
         ref={videoRef}
@@ -85,16 +85,16 @@ export default function HeroSection({ readingUrl }: Props) {
         style={{ opacity: 0 }}
       />
 
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+      {/* Deep indigo overlay for text readability */}
+      <div className="absolute inset-0 bg-deep-space/50 pointer-events-none" />
 
       {/* Navbar */}
       <nav className="relative z-20 px-4 md:px-6 py-6">
         <div className="liquid-glass rounded-full max-w-5xl mx-auto px-5 py-3 flex items-center justify-between">
           {/* Left */}
           <div className="flex items-center gap-2">
-            <Sparkles size={20} className="text-white" />
-            <span className="text-white font-semibold text-lg tracking-tight font-serif">
+            <Sparkles size={20} className="text-gold" />
+            <span className="text-cream font-semibold text-lg tracking-tight font-serif">
               Jothidam
             </span>
             <div className="hidden md:flex items-center gap-8 ml-8">
@@ -102,7 +102,7 @@ export default function HeroSection({ readingUrl }: Props) {
                 <a
                   key={link}
                   href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="text-white/80 hover:text-white text-sm font-medium transition-colors duration-150"
+                  className="text-cream/70 hover:text-cream text-sm font-medium transition-colors duration-150"
                 >
                   {link}
                 </a>
@@ -112,14 +112,11 @@ export default function HeroSection({ readingUrl }: Props) {
 
           {/* Right */}
           <div className="flex items-center gap-3">
-            <span className="hidden md:block text-white text-sm font-medium cursor-pointer hover:text-white/70 transition-colors">
-              Sign In
-            </span>
             <a
-              href={readingUrl}
+              href={stripeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="liquid-glass rounded-full px-5 py-2 text-white text-sm font-medium hover:bg-white/5 transition-colors whitespace-nowrap"
+              className="liquid-glass rounded-full px-5 py-2 text-cream text-sm font-medium hover:bg-gold/5 transition-colors whitespace-nowrap"
             >
               Get Reading
             </a>
@@ -130,35 +127,37 @@ export default function HeroSection({ readingUrl }: Props) {
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center -translate-y-[10%] md:-translate-y-[20%]">
         {/* Headline */}
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white tracking-tight font-serif leading-none mb-8">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-cream tracking-tight font-serif leading-none mb-8">
           Your stars,{' '}
-          <em className="italic text-white/80">never lie.</em>
+          <em className="italic text-gold/90">never lie.</em>
         </h1>
 
         {/* CTA pill */}
         <div className="max-w-xl w-full liquid-glass rounded-full pl-6 pr-2 py-2 flex items-center gap-3 mb-5">
-          <span className="flex-1 text-white/50 text-sm text-left">
-            Begin your reading
+          <span className="flex-1 text-cream/50 text-sm text-left font-body">
+            Unlock my Jathagam reading
           </span>
-          <button
-            onClick={() => window.open(readingUrl, '_blank')}
-            className="bg-white rounded-full p-3 text-black hover:bg-white/90 transition-colors flex-shrink-0 cursor-pointer"
+          <a
+            href={stripeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gold rounded-full p-3 text-deep-space hover:bg-gold-light transition-colors flex-shrink-0 cursor-pointer"
             aria-label="Begin Jathagam reading"
           >
             <ArrowRight size={20} />
-          </button>
+          </a>
         </div>
 
         {/* Subtitle */}
-        <p className="text-white/60 text-sm leading-relaxed px-4 max-w-sm">
-          Lost at a crossroads? Whether it's career, love, or a life decision —
-          your Jathagam has always known the path.
+        <p className="text-cream/60 text-sm leading-relaxed px-4 max-w-sm font-body">
+          Every decision you're wrestling with today was mapped the moment you
+          took your first breath. Stop guessing. Your Jathagam has always known.
         </p>
 
-        {/* Manifesto button */}
+        {/* Scroll anchor */}
         <a
-          href="#what-you-get"
-          className="liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium hover:bg-white/5 transition-colors mt-6 inline-block"
+          href="#pricing"
+          className="liquid-glass rounded-full px-8 py-3 text-cream text-sm font-medium hover:bg-gold/5 transition-colors mt-6 inline-block"
         >
           Discover what the stars say ↓
         </a>
@@ -174,7 +173,7 @@ export default function HeroSection({ readingUrl }: Props) {
           <button
             key={label}
             aria-label={label}
-            className="liquid-glass rounded-full p-4 text-white/80 hover:text-white hover:bg-white/5 transition-all cursor-pointer"
+            className="liquid-glass rounded-full p-4 text-cream/70 hover:text-cream hover:bg-gold/5 transition-all cursor-pointer"
           >
             <Icon size={20} />
           </button>

@@ -8,10 +8,10 @@ export default function AboutSection() {
   return (
     <section
       id="what-you-get"
-      className="bg-black pt-32 md:pt-44 pb-10 md:pb-14 px-6 overflow-hidden"
+      className="pt-24 md:pt-36 pb-10 md:pb-14 px-6 overflow-hidden"
     >
       {/* Radial gradient overlay */}
-      <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.03)_0%,_transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(ellipse_at_top,_rgba(212,175,55,0.04)_0%,_transparent_70%)] pointer-events-none" />
 
       <div ref={ref} className="max-w-5xl mx-auto">
         {/* Label */}
@@ -19,7 +19,7 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-white/40 text-sm tracking-widest uppercase mb-6"
+          className="text-cream/40 text-sm tracking-widest uppercase mb-6 font-body"
         >
           Tamil Vedic Wisdom
         </motion.p>
@@ -29,14 +29,10 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-          className="text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight font-serif"
+          className="text-4xl md:text-6xl lg:text-7xl text-cream leading-[1.1] tracking-tight font-serif"
         >
-          Ancient{' '}
-          <em className="italic text-white/60">clarity</em>{' '}
-          for
-          <br className="hidden md:block" />{' '}
-          minds that{' '}
-          <em className="italic text-white/60">seek direction.</em>
+          The answers you're searching for{' '}
+          <em className="italic text-gold/70">have always been there.</em>
         </motion.h2>
 
         {/* Body */}
@@ -44,13 +40,15 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.25, ease: 'easeOut' }}
-          className="text-white/50 text-base md:text-lg leading-relaxed max-w-2xl mt-8"
+          className="text-cream/50 text-base md:text-lg leading-relaxed max-w-2xl mt-8 font-body"
         >
-          For over 5,000 years, Jyothisham — the sacred Tamil science of light —
-          has revealed what no career counsellor, therapist, or life coach can:
-          the precise cosmic forces that shape your destiny. Your Jathagam is not
-          fortune-telling. It is a precise map drawn at the exact moment you took
-          your first breath.
+          Before your grandparents made any life-changing decision — marriage,
+          migration, career — they consulted the stars first. Jyothisham, the
+          5,000-year Tamil science of cosmic light, reveals what no career
+          counsellor, therapist, or algorithm can: the precise forces already
+          shaping your destiny. Your Jathagam is not fortune-telling. It is a
+          precise map, drawn at the exact moment you took your first breath —
+          and it has been waiting for you to read it.
         </motion.p>
       </div>
     </section>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,9 +16,13 @@
   }
 
   body {
-    background: #000;
-    color: #fff;
-    font-family: 'Instrument Serif', serif;
+    background:
+      radial-gradient(ellipse at 30% 0%,   rgba(18, 19, 74, 0.95) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 100%,  rgba(26, 8, 60, 0.80)  0%, transparent 60%),
+      radial-gradient(ellipse at 50% 50%,   #0a0a2e 0%, #07071e 80%);
+    background-attachment: fixed;
+    color: #f0e8d0;
+    font-family: 'Noto Serif', serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -27,12 +31,12 @@
 
 @layer components {
   .liquid-glass {
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(14, 14, 58, 0.50);
     background-blend-mode: luminosity;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: none;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 1px rgba(212, 175, 55, 0.12);
     position: relative;
     overflow: hidden;
   }
@@ -45,12 +49,12 @@
     padding: 1.4px;
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.45) 0%,
-      rgba(255, 255, 255, 0.15) 20%,
-      rgba(255, 255, 255, 0) 40%,
-      rgba(255, 255, 255, 0) 60%,
-      rgba(255, 255, 255, 0.15) 80%,
-      rgba(255, 255, 255, 0.45) 100%
+      rgba(212, 175, 55, 0.55) 0%,
+      rgba(212, 175, 55, 0.22) 20%,
+      rgba(212, 175, 55, 0)    40%,
+      rgba(212, 175, 55, 0)    60%,
+      rgba(212, 175, 55, 0.22) 80%,
+      rgba(212, 175, 55, 0.55) 100%
     );
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);

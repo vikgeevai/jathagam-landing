@@ -30,14 +30,14 @@ export default function TestimonialsSection() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="stories" className="bg-black py-20 md:py-28 px-6">
+    <section id="stories" className="py-20 md:py-28 px-6">
       <div ref={ref} className="max-w-6xl mx-auto">
         {/* Label */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-white/40 text-sm tracking-widest uppercase text-center mb-4"
+          className="text-cream/40 text-sm tracking-widest uppercase text-center mb-4 font-body"
         >
           From the Tamil community in Singapore
         </motion.p>
@@ -47,10 +47,10 @@ export default function TestimonialsSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
-          className="text-3xl md:text-5xl text-white text-center tracking-tight font-serif mb-16"
+          className="text-3xl md:text-5xl text-cream text-center tracking-tight font-serif mb-16"
         >
           When the reading spoke,{' '}
-          <em className="italic text-white/60">we listened.</em>
+          <em className="italic text-gold/70">we listened.</em>
         </motion.h2>
 
         {/* Cards */}
@@ -68,25 +68,25 @@ export default function TestimonialsSection() {
               className="liquid-glass rounded-3xl p-8 flex flex-col"
             >
               {/* Stars */}
-              <div className="flex gap-1 text-amber-400/80 text-sm">
+              <div className="flex gap-1 text-gold/80 text-sm">
                 {'★★★★★'.split('').map((s, idx) => (
                   <span key={idx}>{s}</span>
                 ))}
               </div>
 
               {/* Quote */}
-              <blockquote className="text-white/80 text-base leading-relaxed italic mt-4 mb-6 flex-1">
+              <blockquote className="text-cream/80 text-base leading-relaxed italic mt-4 mb-6 flex-1 font-body">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="liquid-glass rounded-full w-10 h-10 flex items-center justify-center text-white/60 text-sm font-medium flex-shrink-0">
+                <div className="liquid-glass rounded-full w-10 h-10 flex items-center justify-center text-gold/70 text-sm font-medium flex-shrink-0 font-serif">
                   {t.initials}
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium">{t.name}</p>
-                  <p className="text-white/40 text-xs">{t.role}</p>
+                  <p className="text-cream text-sm font-medium font-serif">{t.name}</p>
+                  <p className="text-cream/40 text-xs font-body">{t.role}</p>
                 </div>
               </div>
             </motion.div>
