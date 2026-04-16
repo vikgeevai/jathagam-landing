@@ -81,68 +81,70 @@ export default function HeroSection({ stripeUrl }: Props) {
         autoPlay
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
         style={{ opacity: 0 }}
       />
 
-      {/* Deep indigo overlay for text readability */}
-      <div className="absolute inset-0 bg-deep-space/50 pointer-events-none" />
+      {/* Deep indigo overlay */}
+      <div className="absolute inset-0 bg-deep-space/55 pointer-events-none" />
 
       {/* Navbar */}
-      <nav className="relative z-20 px-4 md:px-6 py-6">
-        <div className="liquid-glass rounded-full max-w-5xl mx-auto px-5 py-3 flex items-center justify-between">
-          {/* Left */}
-          <div className="flex items-center gap-2">
-            <Sparkles size={20} className="text-gold" />
-            <span className="text-cream font-semibold text-lg tracking-tight font-serif">
+      <nav className="relative z-20 px-4 md:px-6 pt-5 pb-4">
+        <div className="liquid-glass rounded-full max-w-4xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-4">
+          {/* Logo — flex-shrink-0 prevents it from being squeezed */}
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <Sparkles size={18} className="text-gold" />
+            <span className="text-cream font-semibold text-base tracking-tight font-serif">
               Jothidam
             </span>
-            <div className="hidden md:flex items-center gap-8 ml-8">
-              {['What You Get', 'Pricing', 'Stories'].map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="text-cream/70 hover:text-cream text-sm font-medium transition-colors duration-150"
-                >
-                  {link}
-                </a>
-              ))}
-            </div>
           </div>
 
-          {/* Right */}
-          <div className="flex items-center gap-3">
-            <a
-              href={stripeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="liquid-glass rounded-full px-5 py-2 text-cream text-sm font-medium hover:bg-gold/5 transition-colors whitespace-nowrap"
-            >
-              Get Reading
-            </a>
+          {/* Desktop nav links — hidden on mobile */}
+          <div className="hidden md:flex items-center gap-6">
+            {[['What You Get', '#what-you-get'], ['Pricing', '#pricing'], ['Stories', '#stories']].map(([label, href]) => (
+              <a
+                key={label}
+                href={href}
+                className="text-cream/60 hover:text-cream text-sm transition-colors duration-150 font-body"
+              >
+                {label}
+              </a>
+            ))}
           </div>
+
+          {/* CTA */}
+          <a
+            href={stripeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="liquid-glass rounded-full px-4 md:px-5 py-2 text-cream text-xs md:text-sm font-medium hover:bg-gold/5 transition-colors whitespace-nowrap flex-shrink-0"
+          >
+            Get Reading
+          </a>
         </div>
       </nav>
 
-      {/* Hero content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center -translate-y-[10%] md:-translate-y-[20%]">
-        {/* Headline — Noto Serif for elegant mixed-case, not all-caps Cinzel */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-cream tracking-normal font-body font-normal leading-[1.15] mb-3">
-          Your stars,
-        </h1>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold/90 tracking-normal font-body italic font-normal leading-[1.1] mb-10">
-          never lie.
+      {/* Hero content — flex-1 centres vertically without translate hacks */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pb-16 text-center">
+
+        {/* Headline — single h1, two block spans = tight two-line layout */}
+        <h1 className="font-body font-normal mb-5 leading-[1.15]">
+          <span className="block text-cream text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+            Your stars,
+          </span>
+          <em className="block text-gold/90 italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+            never lie.
+          </em>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-cream/60 text-base md:text-lg leading-relaxed px-4 max-w-md font-body mb-8">
+        {/* Subtitle — narrow, calm */}
+        <p className="text-cream/55 text-sm md:text-[0.95rem] leading-relaxed max-w-[17rem] md:max-w-xs font-body mb-8">
           The stars encoded your destiny the moment you were born.
-          Your Jathagam holds the clarity you've been searching for —
-          in career, love, and every crossroads ahead.
+          Your Jathagam holds the clarity you've been searching for.
         </p>
 
-        {/* CTA pill */}
-        <div className="max-w-md w-full liquid-glass rounded-full pl-6 pr-2 py-2 flex items-center gap-3 mb-5">
+        {/* CTA pill — compact */}
+        <div className="w-full max-w-[18rem] md:max-w-xs liquid-glass rounded-full pl-5 pr-1.5 py-1.5 flex items-center gap-3 mb-5">
           <span className="flex-1 text-cream/50 text-sm text-left font-body">
             Receive my Jathagam reading
           </span>
@@ -150,24 +152,24 @@ export default function HeroSection({ stripeUrl }: Props) {
             href={stripeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold rounded-full p-3 text-deep-space hover:bg-gold-light transition-colors flex-shrink-0 cursor-pointer"
+            className="bg-gold rounded-full p-2.5 text-deep-space hover:bg-gold-light transition-colors flex-shrink-0"
             aria-label="Begin Jathagam reading"
           >
-            <ArrowRight size={20} />
+            <ArrowRight size={18} />
           </a>
         </div>
 
-        {/* Scroll anchor */}
+        {/* Scroll cue */}
         <a
           href="#pricing"
-          className="text-cream/40 text-xs tracking-widest uppercase font-body hover:text-cream/60 transition-colors mt-2 inline-block"
+          className="text-cream/35 text-xs tracking-widest uppercase font-body hover:text-cream/55 transition-colors"
         >
           See what awaits you ↓
         </a>
       </div>
 
-      {/* Social footer */}
-      <div className="relative z-10 flex justify-center gap-4 pb-10">
+      {/* Social icons */}
+      <div className="relative z-10 flex justify-center gap-3 pb-8">
         {[
           { icon: Instagram, label: 'Instagram' },
           { icon: Twitter, label: 'Twitter' },
@@ -176,9 +178,9 @@ export default function HeroSection({ stripeUrl }: Props) {
           <button
             key={label}
             aria-label={label}
-            className="liquid-glass rounded-full p-4 text-cream/70 hover:text-cream hover:bg-gold/5 transition-all cursor-pointer"
+            className="liquid-glass rounded-full p-3 text-cream/60 hover:text-cream hover:bg-gold/5 transition-all cursor-pointer"
           >
-            <Icon size={20} />
+            <Icon size={18} />
           </button>
         ))}
       </div>
