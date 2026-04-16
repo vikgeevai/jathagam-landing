@@ -35,7 +35,7 @@ export default function PricingSection({ stripeUrl }: Props) {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-cream/40 text-sm tracking-widest uppercase mb-6 font-body"
         >
-          Your entire cosmic blueprint — one time, $50 SGD
+          Your entire cosmic blueprint — one time, $96.90 SGD
         </motion.p>
 
         {/* Headline */}
@@ -60,12 +60,12 @@ export default function PricingSection({ stripeUrl }: Props) {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
             <div className="flex flex-col gap-3">
               <span className="liquid-glass rounded-full px-4 py-1.5 text-gold/90 text-xs tracking-widest uppercase inline-block w-fit font-body">
-                ✦ 50% OFF TODAY
+                ✦ 52% OFF — LIMITED TIME
               </span>
               <div className="flex items-baseline gap-3 flex-wrap">
-                <s className="text-cream/30 text-2xl font-serif">$100 SGD</s>
+                <s className="text-cream/30 text-2xl font-serif">$200 SGD</s>
                 <span className="text-cream text-6xl md:text-7xl font-serif tracking-tight leading-none">
-                  $50
+                  $96.90
                 </span>
                 <div className="flex flex-col">
                   <span className="text-cream text-lg font-serif">SGD</span>
@@ -111,7 +111,7 @@ export default function PricingSection({ stripeUrl }: Props) {
             whileTap={{ scale: 0.98 }}
             className="block w-full bg-gold text-deep-space rounded-full py-5 text-center text-lg font-medium tracking-tight cursor-pointer hover:bg-gold-light transition-colors font-serif"
           >
-            Claim My Reading for $50 SGD →
+            Claim My Reading for $96.90 SGD →
           </motion.a>
 
           <p className="text-cream/30 text-xs text-center mt-4 font-body">

@@ -126,16 +126,25 @@ export default function HeroSection({ stripeUrl }: Props) {
 
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center -translate-y-[10%] md:-translate-y-[20%]">
-        {/* Headline */}
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-cream tracking-tight font-serif leading-none mb-8">
-          Your stars,{' '}
-          <em className="italic text-gold/90">never lie.</em>
+        {/* Headline — Noto Serif for elegant mixed-case, not all-caps Cinzel */}
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-cream tracking-normal font-body font-normal leading-[1.15] mb-3">
+          Your stars,
+        </h1>
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold/90 tracking-normal font-body italic font-normal leading-[1.1] mb-10">
+          never lie.
         </h1>
 
+        {/* Subtitle */}
+        <p className="text-cream/60 text-base md:text-lg leading-relaxed px-4 max-w-md font-body mb-8">
+          The stars encoded your destiny the moment you were born.
+          Your Jathagam holds the clarity you've been searching for —
+          in career, love, and every crossroads ahead.
+        </p>
+
         {/* CTA pill */}
-        <div className="max-w-xl w-full liquid-glass rounded-full pl-6 pr-2 py-2 flex items-center gap-3 mb-5">
+        <div className="max-w-md w-full liquid-glass rounded-full pl-6 pr-2 py-2 flex items-center gap-3 mb-5">
           <span className="flex-1 text-cream/50 text-sm text-left font-body">
-            Unlock my Jathagam reading
+            Receive my Jathagam reading
           </span>
           <a
             href={stripeUrl}
@@ -148,18 +157,12 @@ export default function HeroSection({ stripeUrl }: Props) {
           </a>
         </div>
 
-        {/* Subtitle */}
-        <p className="text-cream/60 text-sm leading-relaxed px-4 max-w-sm font-body">
-          Every decision you're wrestling with today was mapped the moment you
-          took your first breath. Stop guessing. Your Jathagam has always known.
-        </p>
-
         {/* Scroll anchor */}
         <a
           href="#pricing"
-          className="liquid-glass rounded-full px-8 py-3 text-cream text-sm font-medium hover:bg-gold/5 transition-colors mt-6 inline-block"
+          className="text-cream/40 text-xs tracking-widest uppercase font-body hover:text-cream/60 transition-colors mt-2 inline-block"
         >
-          Discover what the stars say ↓
+          See what awaits you ↓
         </a>
       </div>
 
